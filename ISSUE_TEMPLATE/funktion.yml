@@ -1,0 +1,41 @@
+name: Neue Funktion
+description: Etwas Neues oder eine Erweiterung. Startet sofort den Project Router (Plan).
+labels: [router]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Das Label `router` ist gesetzt: Der Router schreibt gleich einen Plan. Danach mit `/go` freigeben.
+        Fragen im Plan lieber beantworten, statt sie den Agenten zu überlassen.
+  - type: textarea
+    id: ziel
+    attributes:
+      label: Ziel
+      description: Was soll ich danach können, und warum?
+    validations:
+      required: true
+  - type: textarea
+    id: umfang
+    attributes:
+      label: Umfang
+      description: Was genau soll dazukommen oder sich ändern?
+    validations:
+      required: true
+  - type: textarea
+    id: nicht
+    attributes:
+      label: Ausdrücklich nicht
+      description: Was soll sich nicht ändern (z. B. „iPhone unberührt“, keine Migration)?
+  - type: checkboxes
+    id: geraete
+    attributes:
+      label: Für welche Geräte?
+      options:
+        - label: iPhone
+        - label: iPad
+        - label: Desktop
+  - type: textarea
+    id: entscheidungen
+    attributes:
+      label: Entscheidungen, die ich schon getroffen habe
+      description: z. B. Abweichungen von bisherigen Regeln (werden ins Brain übernommen).

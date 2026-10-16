@@ -1,0 +1,36 @@
+name: Design-Änderung
+description: Aussehen oder Layout einer Ansicht. Startet sofort den Project Router (Plan).
+labels: [router]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Das Label `router` ist gesetzt: Der Router schreibt gleich einen Plan. Danach mit `/go` freigeben.
+        Nach dem DEV-Deploy kommen Screenshots in iPhone-, iPad- und Desktop-Breite ins Issue.
+  - type: input
+    id: ansicht
+    attributes:
+      label: Welche Ansicht?
+      placeholder: z. B. Startseite, Detailansicht, Einstellungen
+    validations:
+      required: true
+  - type: checkboxes
+    id: geraete
+    attributes:
+      label: Für welche Geräte?
+      options:
+        - label: iPhone
+        - label: iPad
+        - label: Desktop
+  - type: textarea
+    id: wunsch
+    attributes:
+      label: Was soll sich ändern?
+      description: Gern mit Screenshot oder Skizze. Vorhandene Komponenten und Abstände bevorzugen.
+    validations:
+      required: true
+  - type: textarea
+    id: unberuehrt
+    attributes:
+      label: Was bleibt unverändert?
+      placeholder: z. B. „iPhone-Ansicht unberührt“

@@ -1,0 +1,36 @@
+name: Fehler
+description: Etwas funktioniert nicht wie erwartet. Startet sofort den Project Router (Plan).
+labels: [router]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Das Label `router` ist gesetzt: Der Router schreibt gleich einen Plan. Danach mit `/go` freigeben.
+  - type: textarea
+    id: was
+    attributes:
+      label: Was passiert?
+      description: So genau wie möglich, gern mit Screenshot.
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: Was hätte passieren sollen?
+    validations:
+      required: true
+  - type: textarea
+    id: schritte
+    attributes:
+      label: Wie komme ich dahin?
+      placeholder: "1. Dashboard öffnen\n2. …"
+  - type: checkboxes
+    id: geraete
+    attributes:
+      label: Wo tritt es auf?
+      options:
+        - label: iPhone
+        - label: iPad
+        - label: Desktop
+        - label: DEV
+        - label: PROD
